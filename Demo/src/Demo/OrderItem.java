@@ -11,7 +11,7 @@ public class OrderItem {
         this.customer = customer;
         this.addOns = addOns;
     }
-    public void serveDrink(){
+    public void serveFood(){
         itemDispenser.dispenseItem(amount, customer, addOns);
     }
     public double getPrice() {

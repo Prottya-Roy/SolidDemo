@@ -12,16 +12,15 @@ public class Customer {
     }
 
     void printCustomerDetails(){
-        System.out.println("               Customer: " + name);
-        System.out.println("       Number of orders: " + orderItemNHumber);
-        System.out.println("      Total money spent: " + total_money_spent + " taka");
-        System.out.println("-----------------------------------------------------");
+        System.out.println("Customer: " + name);
+        System.out.println("Total money spent: " + total_money_spent + " taka");
+        System.out.println("Thanks you for coming...");
     }
 
-    void placeOrderForDrink(String drink, double amount, String ... addOns){
-        OrderItem orderDrinks = new OrderItem(drink, amount, name, addOns);
-        orderDrinks.serveDrink();
+    void placeOrderForFood(String drink, double amount, String ... addOns){
+        OrderItem orderFood = new OrderItem(drink, amount, name, addOns);
+        orderFood.serveFood();
         orderItemNHumber++;
-        total_money_spent += orderDrinks.getPrice();
+        total_money_spent += orderFood.getPrice();
     }
 }

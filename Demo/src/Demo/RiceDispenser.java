@@ -15,6 +15,8 @@ public class RiceDispenser implements ItemDispenserRice{
                 case "khicuri":
                     KhicuriRice();
                     break;
+                default:
+                    throw new IllegalStateException("Unexpected value: " + addOn);
             }
         }
     }
