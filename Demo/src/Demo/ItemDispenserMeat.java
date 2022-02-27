@@ -1,8 +1,10 @@
 package Demo;
 
-public interface ItemDispenserMeat {
-    void dispenseItem(double amount, String customer, String ... addOns);
-    double calculatePrice(double amount);
+public interface ItemDispenserMeat extends ItemDispenser {
+    void dispenseItem(int amount, String customer, String category);
+    int calculatePrice(int amount);
     void Chicken();
     void Beef();
+    void Mutton();
+    void Koyel();
 }

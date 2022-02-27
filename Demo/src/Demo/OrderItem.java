@@ -2,19 +2,19 @@ package Demo;
 
 public class OrderItem {
     ItemDispenser itemDispenser;
-    double amount;
+    int amount;
     String customer;
-    String addOns[];
-    public OrderItem(String drink, double amount, String customer, String[] addOns){
-        itemDispenser = ItemDispenserFactory.getItemDispenser(drink);
+    String category;
+    public OrderItem(String Food, int amount, String customer, String category){
+        itemDispenser = ItemDispenserFactory.getItemDispenser(Food);
         this.amount = amount;
         this.customer = customer;
-        this.addOns = addOns;
+        this.category = category;
     }
     public void serveFood(){
-        itemDispenser.dispenseItem(amount, customer, addOns);
+        itemDispenser.dispenseItem(amount, customer, category);
     }
-    public double getPrice() {
+    public int getPrice() {
         return itemDispenser.calculatePrice(amount);
     }
 }

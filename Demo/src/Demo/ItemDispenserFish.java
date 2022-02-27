@@ -1,8 +1,12 @@
 package Demo;
 
-public interface ItemDispenserFish {
-    void dispenseItem(double amount, String customer, String ... addOns);
-    double calculatePrice(double amount);
+public interface ItemDispenserFish extends ItemDispenser {
+    void dispenseItem(int amount, String customer, String category);
+    int calculatePrice(int amount);
     void RuiFish();
+    void KatolFish();
+    void TelapiaFish();
+    void HilshaFish();
+    void Shrimp();
     void SmallFish();
 }

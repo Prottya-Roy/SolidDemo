@@ -2,25 +2,22 @@ package Demo;
 
 public class Customer {
     String name;
-    int orderItemNHumber;
-    double total_money_spent;
+    int total_money_spent=0;
 
     public Customer(String name){
         this.name = name;
-        orderItemNHumber = 0;
-        total_money_spent = 0;
     }
 
     void printCustomerDetails(){
         System.out.println("Customer: " + name);
-        System.out.println("Total money spent: " + total_money_spent + " taka");
+        System.out.println("Total amount: " + total_money_spent + " taka");
         System.out.println("Thanks you for coming...");
+        System.out.println("Hope you had a great time here!!!");
     }
 
-    void placeOrderForFood(String drink, double amount, String ... addOns){
-        OrderItem orderFood = new OrderItem(drink, amount, name, addOns);
-        orderFood.serveFood();
-        orderItemNHumber++;
-        total_money_spent += orderFood.getPrice();
+    void placeOrderForFood(String Food, int amount, String name, String categoryName){
+        OrderItem orderItem = new OrderItem(Food, amount, name, categoryName);
+        orderItem.serveFood();
+        total_money_spent = total_money_spent +  orderItem.getPrice();
     }
 }

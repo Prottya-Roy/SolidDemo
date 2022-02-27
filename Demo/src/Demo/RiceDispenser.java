@@ -1,11 +1,10 @@
 package Demo;
 
 public class RiceDispenser implements ItemDispenserRice{
-    double unitPrice=0;
+    int unitPrice=0;
 
-    public void dispenseItem(double amount, String customer, String... addOns){
-        for(String addOn : addOns){
-            switch(addOn){
+    public void dispenseItem(int amount, String customer, String category){
+            switch(category){
                 case "normal":
                     normalRice();
                     break;
@@ -15,10 +14,8 @@ public class RiceDispenser implements ItemDispenserRice{
                 case "khicuri":
                     KhicuriRice();
                     break;
-                default:
-                    throw new IllegalStateException("Unexpected value: " + addOn);
             }
-        }
+
     }
 
     public void normalRice(){
@@ -26,14 +23,14 @@ public class RiceDispenser implements ItemDispenserRice{
     }
 
     public void polaoRice(){
-        unitPrice = 40;
+        unitPrice = 35;
     }
     public void KhicuriRice(){
-        unitPrice=35;
+        unitPrice=40;
     }
 
-    public double calculatePrice(double amount){
-        double price = amount * unitPrice;
+    public int calculatePrice(int amount){
+        int price = amount * unitPrice;
         return price;
     }
 

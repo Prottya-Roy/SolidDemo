@@ -1,6 +1,6 @@
 package Demo;
 
 public interface ItemDispenser {
-    void dispenseItem(double amount, String customer, String ... addOns);
-    double calculatePrice(double amount);
+    void dispenseItem(int amount, String customer, String category);
+    int calculatePrice(int amount);
 }

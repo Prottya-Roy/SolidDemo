@@ -1,31 +1,42 @@
 package Demo;
 
 public class MeatDispenser implements ItemDispenserMeat{
-    double unitPrice=0;
+    int unitPrice=0;
 
-    public void dispenseItem(double amount, String customer, String... addOns){
-        for(String addOn : addOns){
-            switch(addOn){
+    public void dispenseItem(int amount, String customer, String category){
+            switch(category){
                 case "chicken":
                     Chicken();
                     break;
                 case "beef":
                     Beef();
                     break;
+                case "mutton":
+                    Mutton();
+                    break;
+                case "koyel":
+                    Koyel();
+                    break;
             }
-        }
     }
 
-    public void Chicken(){
-        unitPrice = 90;
+    public void Chicken() {
+        unitPrice = 60;
     }
 
-    public void Beef(){
+    public void Beef() {
         unitPrice = 140;
     }
 
-    public double calculatePrice(double amount){
-        double price = amount * unitPrice;
+    public void Mutton(){
+        unitPrice= 180;
+    }
+    public void Koyel(){
+        unitPrice = 100;
+    }
+
+    public int calculatePrice(int amount){
+        int price = amount * unitPrice;
         return price;
     }
 }
